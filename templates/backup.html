@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Backup{% endblock %}
+{% block content %}
+<div class="backup-page">
+    <h1>💾 Backup</h1>
+    <div class="section">
+        <h2>Trigger Backup</h2>
+        <form class="backup-form">
+            <select id="backup-device">
+                <option value="cisco-rtr-1">cisco-rtr-1</option>
+                <option value="juniper-sw-2">juniper-sw-2</option>
+                <option value="arista-swt-3">arista-swt-3</option>
+                <option value="fortigate-fw-4">fortigate-fw-4</option>
+                <option value="mikrotik-ap-5">mikrotik-ap-5</option>
+                <option value="cisco-rtr-6">cisco-rtr-6</option>
+            </select>
+            <select id="backup-mode">
+                <option value="full">Full Config</option>
+                <option value="startup">Startup Config</option>
+            </select>
+            <button type="submit">🔄 Trigger Backup</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Backup History</h2>
+        <table>
+            <thead>
+                <tr><th>Device</th><th>Version</th><th>Timestamp</th><th>Size</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>cisco-rtr-1</td><td>20260615120000</td><td>2 hrs ago</td><td>45 KB</td><td>✅ Completed</td></tr>
+                <tr><td>juniper-sw-2</td><td>20260615060000</td><td>5 hrs ago</td><td>62 KB</td><td>✅ Completed</td></tr>
+                <tr><td>arista-swt-3</td><td>20260614120000</td><td>1 day ago</td><td>38 KB</td><td>✅ Completed</td></tr>
+                <tr><td>fortigate-fw-4</td><td>20260613060000</td><td>2 days ago</td><td>55 KB</td><td>⚠️ Failed</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Schedules</h2>
+        <div class="schedule-list">
+            <div class="schedule-item">
+                <span class="schedule-name">Daily Backup</span>
+                <span class="schedule-interval">Every 24 hours</span>
+                <span class="schedule-status enabled">✅ Enabled</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Weekly Backup</span>
+                <span class="schedule-interval">Every 7 days</span>
+                <span class="schedule-status enabled">✅ Enabled</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Monthly Backup</span>
+                <span class="schedule-interval">Every 30 days</span>
+                <span class="schedule-status disabled">❌ Disabled</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

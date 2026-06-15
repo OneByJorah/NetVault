@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Cloud Sync{% endblock %}
+{% block content %}
+<div class="cloud-page">
+    <h1>☁️ Cloud Sync</h1>
+    <div class="section">
+        <h2>Cloud Storage</h2>
+        <div class="cloud-options">
+            <div class="cloud-card">
+                <div class="cloud-icon">📦</div>
+                <div class="cloud-name">Amazon S3</div>
+                <div class="cloud-status enabled">✅ Enabled</div>
+                <div class="cloud-path">s3://netvault-backups</div>
+            </div>
+            <div class="cloud-card">
+                <div class="cloud-icon">🐦</div>
+                <div class="cloud-name">Google Drive</div>
+                <div class="cloud-status enabled">✅ Enabled</div>
+                <div class="cloud-path">gdrive/netvault-backups</div>
+            </div>
+            <div class="cloud-card">
+                <div class="cloud-icon">📧</div>
+                <div class="cloud-name">Microsoft OneDrive</div>
+                <div class="cloud-status disabled">❌ Disabled</div>
+                <div class="cloud-path">OneDrive/Backups</div>
+            </div>
+            <div class="cloud-card">
+                <div class="cloud-icon">☁️</div>
+                <div class="cloud-name">Backblaze B2</div>
+                <div class="cloud-status enabled">✅ Enabled</div>
+                <div class="cloud-path">b2://netvault-backups</div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Manual Sync</h2>
+        <form class="sync-form">
+            <input type="text" placeholder="Remote path (optional)" id="sync-remote" value="/var/lib/netvault/backup">
+            <button type="submit">🔄 Sync Now</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Sync History</h2>
+        <table>
+            <thead>
+                <tr><th>Timestamp</th><th>Cloud</th><th>Files Synced</th><th>Size</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2 hrs ago</td><td>S3</td><td>45</td><td>2.3 MB</td><td>✅ Completed</td></tr>
+                <tr><td>5 hrs ago</td><td>Google Drive</td><td>42</td><td>2.1 MB</td><td>✅ Completed</td></tr>
+                <tr><td>1 day ago</td><td>S3</td><td>38</td><td>1.9 MB</td><td>✅ Completed</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Alerts{% endblock %}
+{% block content %}
+<div class="alerts-page">
+    <h1>🔔 Alerts</h1>
+    <div class="section">
+        <h2>Alert Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2 hrs ago</div>
+                <div class="timeline-content">
+                    <div class="timeline-badge critical"></div>
+                    <div class="timeline-message">
+                        <strong>cisco-rtr-1</strong> - Config change detected
+                        <div class="timeline-details">
+                            <span class="badge warning">Config Change</span>
+                            <span class="badge critical">Critical</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">5 hrs ago</div>
+                <div class="timeline-content">
+                    <div class="timeline-badge info"></div>
+                    <div class="timeline-message">
+                        <strong>juniper-sw-2</strong> - Scheduled backup completed
+                        <div class="timeline-details">
+                            <span class="badge info">Backup</span>
+                            <span class="badge success">Success</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1 day ago</div>
+                <div class="timeline-content">
+                    <div class="timeline-badge warning"></div>
+                    <div class="timeline-message">
+                        <strong>arista-swt-3</strong> - Failed to connect
+                        <div class="timeline-details">
+                            <span class="badge warning">Connection</span>
+                            <span class="badge warning">Warning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2 days ago</div>
+                <div class="timeline-content">
+                    <div class="timeline-badge info"></div>
+                    <div class="timeline-message">
+                        <strong>fortigate-fw-4</strong> - SSL certificate expiring in 30 days
+                        <div class="timeline-details">
+                            <span class="badge info">Certificate</span>
+                            <span class="badge warning">Warning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">3 days ago</div>
+                <div class="timeline-content">
+                    <div class="timeline-badge success"></div>
+                    <div class="timeline-message">
+                        <strong>cisco-rtr-1</strong> - Git commit pushed successfully
+                        <div class="timeline-details">
+                            <span class="badge success">Git</span>
+                            <span class="badge success">Success</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Webhooks</h2>
+        <form class="webhook-form">
+            <input type="text" placeholder="Webhook URL (Slack, Teams, Discord)" id="webhook-url">
+            <select id="webhook-type">
+                <option value="slack">Slack</option>
+                <option value="teams">Teams</option>
+                <option value="discord">Discord</option>
+                <option value="email">Email</option>
+            </select>
+            <button type="submit">🔗 Configure Webhook</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

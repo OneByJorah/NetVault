@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Compare{% endblock %}
+{% block content %}
+<div class="compare-page">
+    <h1>🔍 Compare Configs</h1>
+    <div class="section">
+        <h2>Compare Configurations</h2>
+        <form class="compare-form">
+            <select id="compare-base">
+                <option value="20260615120000">20260615120000</option>
+                <option value="20260614120000">20260614120000</option>
+            </select>
+            <select id="compare-target">
+                <option value="20260615120000">20260615120000</option>
+                <option value="20260614120000">20260614120000</option>
+            </select>
+            <button type="submit">🔍 Compare</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Diff Viewer</h2>
+        <div class="diff-container">
+            <div class="diff-file">
+                <div class="diff-header">
+                    <span class="diff-file-name">base</span>
+                    <span class="diff-actions">
+                        <span class="diff-action added">+ 120</span>
+                        <span class="diff-action removed">- 45</span>
+                        <span class="diff-action changed">~ 38</span>
+                    </span>
+                </div>
+                <div class="diff-content">
+                    <div class="diff-line removed"><span class="diff-marker">-</span><span class="diff-content">router ospf 1</span></div>
+                    <div class="diff-line"><span class="diff-marker"> </span><span class="diff-content">router-id 1.1.1.1</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">network 192.168.1.0 0.0.0.255 area 0</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">network 192.168.2.0 0.0.0.255 area 0</span></div>
+                    <div class="diff-line"><span class="diff-marker"> </span><span class="diff-content">passive-interface default</span></div>
+                    <div class="diff-line removed"><span class="diff-marker">-</span><span class="diff-content">no passive-interface GigabitEthernet0/0</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">passive-interface GigabitEthernet0/0</span></div>
+                </div>
+            </div>
+            <div class="diff-file">
+                <div class="diff-header">
+                    <span class="diff-file-name">compare</span>
+                    <span class="diff-actions">
+                        <span class="diff-action added">+ 130</span>
+                        <span class="diff-action removed">- 52</span>
+                        <span class="diff-action changed">~ 42</span>
+                    </span>
+                </div>
+                <div class="diff-content">
+                    <div class="diff-line removed"><span class="diff-marker">-</span><span class="diff-content">router ospf 1</span></div>
+                    <div class="diff-line"><span class="diff-marker"> </span><span class="diff-content">router-id 1.1.1.1</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">network 192.168.1.0 0.0.0.255 area 0</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">network 192.168.2.0 0.0.0.255 area 0</span></div>
+                    <div class="diff-line"><span class="diff-marker"> </span><span class="diff-content">passive-interface default</span></div>
+                    <div class="diff-line removed"><span class="diff-marker">-</span><span class="diff-content">no passive-interface GigabitEthernet0/0</span></div>
+                    <div class="diff-line added"><span class="diff-marker">+</span><span class="diff-content">passive-interface GigabitEthernet0/0</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Summary</h2>
+        <div class="summary">
+            <div class="summary-item">
+                <span class="summary-value">+ 130</span>
+                <span class="summary-label">Lines Added</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-value removed">- 52</span>
+                <span class="summary-label">Lines Removed</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-value changed">~ 42</span>
+                <span class="summary-label">Lines Changed</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

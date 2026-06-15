@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Restore{% endblock %}
+{% block content %}
+<div class="restore-page">
+    <h1>📤 Restore</h1>
+    <div class="section">
+        <h2>Restore Configuration</h2>
+        <form class="restore-form">
+            <input type="text" placeholder="Commit ID" id="restore-commit" value="20260615120000">
+            <select id="restore-target">
+                <option value="cisco-rtr-1">cisco-rtr-1</option>
+                <option value="juniper-sw-2">juniper-sw-2</option>
+                <option value="arista-swt-3">arista-swt-3</option>
+                <option value="fortigate-fw-4">fortigate-fw-4</option>
+            </select>
+            <button type="submit">📤 Restore Config</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Restore History</h2>
+        <table>
+            <thead>
+                <tr><th>Commit ID</th><th>Target</th><th>Timestamp</th><th>Config File</th><th>Size</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>20260615120000</td><td>cisco-rtr-1</td><td>2 hrs ago</td><td>/var/lib/netvault/backup/cisco-rtr-1_running.conf</td><td>45 KB</td><td>✅ Restored</td></tr>
+                <tr><td>20260615060000</td><td>juniper-sw-2</td><td>5 hrs ago</td><td>/var/lib/netvault/backup/juniper-sw-2_startup.conf</td><td>62 KB</td><td>✅ Restored</td></tr>
+                <tr><td>20260614120000</td><td>arista-swt-3</td><td>1 day ago</td><td>/var/lib/netvault/backup/arista-swt-3_running.conf</td><td>38 KB</td><td>✅ Restored</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

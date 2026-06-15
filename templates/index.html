@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}NetVault NOC - Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard">
+    <h1>📊 Dashboard</h1>
+    <div class="stats">
+        <div class="card">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Total Devices</div>
+        </div>
+        <div class="card">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Recent Backups</div>
+        </div>
+        <div class="card">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Active Alerts</div>
+        </div>
+        <div class="card">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Cloud Sync</div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>🖥️ Recent Devices</h2>
+        <table>
+            <thead>
+                <tr><th>Name</th><th>OS</th><th>Last Backup</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>cisco-rtr-1</td><td>IOS-XE</td><td>2 hrs ago</td><td>✅ Active</td></tr>
+                <tr><td>juniper-sw-2</td><td>JunOS</td><td>5 hrs ago</td><td>✅ Active</td></tr>
+                <tr><td>arista-swt-3</td><td>EOS</td><td>1 day ago</td><td>✅ Active</td></tr>
+                <tr><td>fortigate-fw-4</td><td>FortiOS</td><td>2 days ago</td><td>⚠️ Warning</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>🔔 Recent Alerts</h2>
+        <ul>
+            <li><span class="badge warning">Config change detected on cisco-rtr-1</span></li>
+            <li><span class="badge info">Scheduled backup completed for juniper-sw-2</span></li>
+            <li><span class="badge warning">Failed to connect to arista-swt-3</span></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NetVault NOC{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">🔒 NetVault NOC</div>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">📊 Dashboard</a></li>
+            <li><a href="{{ url_for('devices_page') }}">🖥️ Devices</a></li>
+            <li><a href="{{ url_for('backup_page') }}">💾 Backup</a></li>
+            <li><a href="{{ url_for('restore_page') }}">📤 Restore</a></li>
+            <li><a href="{{ url_for('compare_page') }}">🔍 Compare</a></li>
+            <li><a href="{{ url_for('alerts_page') }}">🔔 Alerts</a></li>
+            <li><a href="{{ url_for('sync_page') }}">☁️ Cloud</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
