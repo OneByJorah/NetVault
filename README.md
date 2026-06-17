@@ -157,7 +157,7 @@ flowchart TB
 ## 📁 Project Structure
 
 ```
-NetVault-NOC/
+NetVault/
 ├── README.md                   # This documentation
 ├── LICENSE                     # MIT License
 ├── requirements.txt            # Python dependencies
@@ -234,8 +234,8 @@ NetVault-NOC/
 
 ```bash
 # Clone the repository
-git clone https://github.com/OneByJorah/NetVault-NOC.git
-cd NetVault-NOC
+git clone https://github.com/OneByJorah/NetVault.git
+cd NetVault
 
 # Install dependencies
 pip install -r requirements.txt
@@ -589,7 +589,7 @@ MIT License — free to use, modify, and distribute.
 
 For issues or questions, please open an issue on GitHub:
 
-https://github.com/OneByJorah/NetVault-NOC/issues
+https://github.com/OneByJorah/NetVault/issues
 
 ---
 
