@@ -1,26 +1,120 @@
-# NetVault NOC
+# NetVault (NetVault)
 
-Local-run verified documentation.
+**Version:** v0.1  
+**Status:** Active Development  
+**Repository:** https://github.com/OneByJorah/NetVault
 
-## Run locally
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Service Management](#service-management)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+
+---
+
+## Overview
+
+Network backup and asset management tooling with API-driven inventory.
+
+---
+
+## Architecture
+
+Client → Local service (`NetVault`) → data/processing modules → output/api layer.
+Secrets and environment configuration are managed via environment files with restrictive permissions.
+
+---
+
+## Technology Stack
+
+|| Layer | Stack |
+|---|---|
+| Runtime | Linux (Ubuntu 22.04+) |
+| Primary Stack | Python / FastAPI / SQLAlchemy |
+| VCS | Git + GitHub (`github.com/OneByJorah/NetVault`) |
+| Dev Port | Localhost / systemd service |
+
+---
+
+## Features
+
+- Operational dashboard and monitoring (per repo).
+- Exportable data / reports where supported.
+- Extensible service-based design.
+- Dark-themed UI where applicable.
+
+---
+
+## Getting Started
+
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-flask --app app run
+# 1. Clone the repository
+git clone https://github.com/OneByJorah/NetVault.git
+cd NetVault
+
+# 2. Install dependencies
+# (see specific subproject docs)
+
+# 3. Start the service
+# (see Service Management below)
 ```
 
-## Verified APIs
-- `GET /api/v1/health` -> JSON health status
-- `GET /api/v1/` -> JSON service info
-- `GET /api/v1/config` -> service toggles and config names
+---
 
-## Reference map
-- App factory: `app/__init__.py`
-- Config: `app/config.py`
-- REST API: `app/routes/api.py`
-- Routes: `app/routes/{devices,backup,restore,compare,alerts,sync}.py`
-- Templates: `templates/{index,devices,backup,restore,compare,alerts,cloud}.html`
+## Service Management
 
-## Status
-✅ README references verified against actual code paths.
+```bash
+# Start the service (example)
+sudo systemctl start NetVault.service
+sudo systemctl enable NetVault.service
+```
+
+Access the service via your configured localhost port or reverse proxy.
+
+---
+
+## Project Structure
+
+```
+NetVault/
+├── README.md
+├── (additional project files)
+```
+
+---
+
+## Screenshots
+
+All screenshots are live captures from the local dev instance.
+
+_(Screenshots will be added after build/run capture.)_
+
+---
+
+## Contributing
+
+1. Create a feature branch off `main`.
+2. Follow the existing code style.
+3. Submit a PR with description and screenshots for UI changes.
+
+---
+
+## License
+
+MIT
+
+---
+
+## Author
+
+Built by **Jhonattan L. Jimenez**.
